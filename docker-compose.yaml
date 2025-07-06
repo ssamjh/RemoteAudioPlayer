@@ -1,0 +1,13 @@
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./python:/app
+    restart: unless-stopped
+    env_file:
+      # Generate key with: python -c "import secrets; print(secrets.token_hex(32))"
+      - .env
+    ports:
+      - "5000:5000"
