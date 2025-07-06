@@ -620,4 +620,4 @@ if __name__ == "__main__":
     print("3. Receiver uploads an audio file")
     print("4. Controller clicks 'PLAY SOUND' to trigger playback")
 
-    socketio.run(app, host="0.0.0.0", port=5000, debug=True)
+    socketio.run(app, host="0.0.0.0", port=5000, debug=True, allow_unsafe_werkzeug=True)
